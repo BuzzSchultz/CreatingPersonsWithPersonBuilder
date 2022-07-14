@@ -26,7 +26,7 @@ public class Main {
         son.happyBirthday();
         System.out.println(son);
 
-        System.out.println("Создаем объевт Person без необязательных полей");
+        System.out.println("Создаем объект Person без необязательных полей");
         Person kate = new PersonBuilder()
                 .setName("Kate")
                 .setSurname("Brown")

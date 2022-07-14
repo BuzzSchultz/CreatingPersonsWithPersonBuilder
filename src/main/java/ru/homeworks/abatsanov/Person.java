@@ -49,8 +49,8 @@ public class Person {
     }
 
     public PersonBuilder newChildBuilder() {
-        return new PersonBuilder().setSurname(this.getSurname())
-                .setAddress(this.getAddress())
+        return new PersonBuilder().setSurname(getSurname())
+                .setAddress(getAddress())
                 .setAge(0);
     }
 
@@ -62,6 +62,15 @@ public class Person {
                 ", age=" + getAge() +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || !obj.getClass().equals(Person.class)) return false;
+        Person o = (Person) obj;
+        return name.equals(o.name) && surname.equals(o.surname)
+                && age.equals(o.age) && address.equals(o.address);
     }
 
     @Override
